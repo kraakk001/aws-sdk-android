@@ -66,7 +66,7 @@ public class SignUpActivity extends Activity {
         signUpView = (SignUpView) findViewById(R.id.signup_view);
 
         Context appContext = getApplicationContext();
-        mUserPool = new CognitoUserPool(appContext, new AWSConfiguration(appContext));
+        mUserPool = new CognitoUserPool(appContext, AWSMobileClient.getInstance().getConfiguration());
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
